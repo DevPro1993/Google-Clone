@@ -4,9 +4,21 @@
      box-sizing: border-box;
  }
 
+ //  * {
+ //      border: 1px solid black;
+ //  }
+
 
 
  .header {
+     font-size: 0.9rem;
+
+     #gmail,
+     #images {
+         &:hover {
+             border-bottom: 1px solid black;
+         }
+     }
 
      a,
      a:hover {
@@ -17,10 +29,15 @@
 
      #square-grid img {
          width: 30px;
+         opacity: 0.6;
+
+         &:hover {
+             opacity: 0.9;
+         }
      }
 
      #a-logo img {
-         width: 40px;
+         width: 35px;
          border-radius: 50%;
      }
  }
@@ -40,8 +57,8 @@
      input {
          width: 90%;
          border: none;
-         background: red;
-         font-size: 1.5rem;
+         //  background: red;
+         font-size: 1.2rem;
          font-weight: 300;
          padding: 0 10px;
 
@@ -53,5 +70,22 @@
      img {
          width: 3%;
          height: auto;
+     }
+ }
+
+ #google-search,
+ #feeling-lucky {
+     outline: none;
+     border: none;
+     padding: 0.5rem 1.1rem;
+     border-radius: 4px;
+     font-size: 0.9rem;
+     margin: 0 0.5rem;
+     color: rgba(0, 0, 0, 0.65);
+
+     &:hover {
+         background-color: whitesmoke;
+         border: 3px solid inset rgb(0, 0, 0);
+         box-shadow: 0.2px 0.2px 3px rgba(0, 0, 0, 0.459);
      }
  }
