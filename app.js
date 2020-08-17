@@ -1,12 +1,21 @@
-const apiKey = "AIzaSyBrqdM95J1Uezea7IguZoVAvXwmqC35tSQ";
-const url = "https://www.googleapis.com/customsearch/v1";
-const cx = "017576662512468239146:omuauf_lfve";
-const searchQuery = 'lectures';
+let searchQuery;
+const googleSearchButton = document.getElementById('google-search');
 
+const searchInput = document.querySelector('.search-bar > input');
+searchInput.value = '';
 
-fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${searchQuery}`)
-.then(response => {
-    return response.json()
-}).then(data => {
-    console.log(data)
+console.log(window.location.href);
+
+searchInput.addEventListener('keyup', (e) => {
+    searchQuery = e.target.value;
+    if (e.keyCode === 13 && searchQuery !== '') {
+        window.location.href = `https://www.google.com/search?q=${searchQuery}`
+    }
+})
+
+googleSearchButton.addEventListener('click', () => {
+    searchQuery = searchInput.value;
+    if (searchQuery !== '') {
+        window.location.href = `https://www.google.com/search?q=${searchQuery}`
+    }
 })
